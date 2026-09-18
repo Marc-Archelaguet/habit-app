@@ -17,7 +17,7 @@ function App() {
   const [history, setHistory] = useState([]);
 
   // Detecció dinàmica del host per funcionar tant a PC com a Mòbil
-  const API_URL = `http://${window.location.hostname}:5000/api`;
+const API_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000/api`;
 
   const fetchHabits = async () => {
     try {
